@@ -1,0 +1,141 @@
+<div
+  class="flex items-center justify-center min-h-screen bg-gradient-to-br from-indigo-400 to-blue-500"
+>
+  <div
+    class="card p-5 w-[400px] bg-white rounded-2xl shadow-2xl transition-all duration-500 h-[70%]"
+  >
+    <!-- 🔹 Added for toggle -->
+    <input type="checkbox" id="toggleForm" class="hidden peer" />
+
+    <!-- Toggle buttons -->
+    <div class="flex justify-center mb-5">
+      <label
+        for="toggleForm"
+        class="toggle-btn me-2 px-6 py-1 rounded-full cursor-pointer transition-all duration-300 peer-checked:bg-gray-200 bg-indigo-600 text-white font-semibold"
+      >
+        Login
+      </label>
+      <label
+        for="toggleForm"
+        class="toggle-btn px-6 py-1 rounded-full cursor-pointer transition-all duration-300 peer-checked:bg-indigo-600 peer-checked:text-white font-semibold bg-gray-200 text-gray-700"
+      >
+        Sign Up
+      </label>
+    </div>
+
+    <!-- LOGIN FORM -->
+    <form class="space-y-4 login-form peer-checked:hidden">
+      <h3 class="text-center font-semibold mb-4 text-gray-800">Welcome Back</h3>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text bg-indigo-100"
+          ><i class="bi bi-envelope text-indigo-600"></i
+        ></span>
+        <input type="email" class="form-control" placeholder="Email" required />
+      </div>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text bg-indigo-100"
+          ><i class="bi bi-lock text-indigo-600"></i
+        ></span>
+        <input
+          type="password"
+          class="form-control"
+          placeholder="Password"
+          required
+        />
+      </div>
+
+      <small class="text-gray-500 block mb-2 text-xs">
+        Password must include uppercase, lowercase, number, and special
+        character.
+      </small>
+
+      <button
+        class="btn btn-primary w-100 bg-indigo-600 hover:bg-indigo-700 border-0"
+      >
+        Login
+      </button>
+
+      <p class="text-center mt-3 text-muted text-sm">Or login with</p>
+      <div class="d-flex justify-content-center gap-3">
+        <button type="button" class="btn btn-outline-dark btn-sm rounded-md">
+          Google
+        </button>
+        <button type="button" class="btn btn-outline-dark btn-sm rounded-md">
+          GitHub
+        </button>
+      </div>
+    </form>
+
+    <!-- SIGNUP FORM -->
+    <form class="space-y-4 signup-form hidden peer-checked:block">
+      <h3 class="text-center font-semibold mb-4 text-gray-800">
+        Create Account
+      </h3>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text bg-indigo-100"
+          ><i class="bi bi-person text-indigo-600"></i
+        ></span>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Full Name"
+          required
+        />
+      </div>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text bg-indigo-100"
+          ><i class="bi bi-envelope text-indigo-600"></i
+        ></span>
+        <input type="email" class="form-control" placeholder="Email" required />
+      </div>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text bg-indigo-100"
+          ><i class="bi bi-lock text-indigo-600"></i
+        ></span>
+        <input
+          type="password"
+          class="form-control"
+          placeholder="Password"
+          required
+        />
+      </div>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text bg-indigo-100"
+          ><i class="bi bi-lock text-indigo-600"></i
+        ></span>
+        <input
+          type="password"
+          class="form-control"
+          placeholder="Confirm Password"
+          required
+        />
+      </div>
+
+      <div class="form-check mb-3 text-sm">
+        <input
+          type="checkbox"
+          class="form-check-input"
+          id="termsCheck"
+          required
+        />
+        <label class="form-check-label" for="termsCheck">
+          I agree to the
+          <a href="#" class="text-indigo-600">Terms of Service</a> and
+          <a href="#" class="text-indigo-600">Privacy Policy</a>.
+        </label>
+      </div>
+
+      <button
+        class="btn btn-primary w-100 bg-indigo-600 hover:bg-indigo-700 border-0"
+      >
+        Sign Up
+      </button>
+    </form>
+  </div>
+</div>

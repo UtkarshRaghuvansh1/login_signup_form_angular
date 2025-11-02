@@ -4,27 +4,35 @@
   <div
     class="card p-5 w-[400px] bg-white rounded-2xl shadow-2xl transition-all duration-500 h-[70%]"
   >
-    <!-- 🔹 Added for toggle -->
-    <input type="checkbox" id="toggleForm" class="hidden peer" />
-
-    <!-- Toggle buttons -->
+    <!-- 🔹 Removed checkbox toggle -->
+    <!-- 🔹 Using Angular boolean variable instead -->
     <div class="flex justify-center mb-5">
-      <label
-        for="toggleForm"
-        class="toggle-btn me-2 px-6 py-1 rounded-full cursor-pointer transition-all duration-300 peer-checked:bg-gray-200 bg-indigo-600 text-white font-semibold"
+      <!-- 🔹 Added click bindings -->
+      <button
+        class="me-2 px-6 py-1 rounded-full transition-all duration-300 font-semibold"
+        [class.bg-indigo-600]="!showSignUpForm"
+        [class.text-white]="!showSignUpForm"
+        [class.bg-gray-200]="showSignUpForm"
+        [class.text-gray-700]="showSignUpForm"
+        (click)="showSignUpForm = false"
       >
         Login
-      </label>
-      <label
-        for="toggleForm"
-        class="toggle-btn px-6 py-1 rounded-full cursor-pointer transition-all duration-300 peer-checked:bg-indigo-600 peer-checked:text-white font-semibold bg-gray-200 text-gray-700"
+      </button>
+
+      <button
+        class="px-6 py-1 rounded-full transition-all duration-300 font-semibold"
+        [class.bg-indigo-600]="showSignUpForm"
+        [class.text-white]="showSignUpForm"
+        [class.bg-gray-200]="!showSignUpForm"
+        [class.text-gray-700]="!showSignUpForm"
+        (click)="showSignUpForm = true"
       >
         Sign Up
-      </label>
+      </button>
     </div>
 
     <!-- LOGIN FORM -->
-    <form class="space-y-4 login-form peer-checked:hidden">
+    <form class="space-y-4 login-form" [class.hidden]="showSignUpForm">
       <h3 class="text-center font-semibold mb-4 text-gray-800">Welcome Back</h3>
 
       <div class="input-group mb-3">
@@ -69,7 +77,7 @@
     </form>
 
     <!-- SIGNUP FORM -->
-    <form class="space-y-4 signup-form hidden peer-checked:block">
+    <form class="space-y-4 signup-form" [class.hidden]="!showSignUpForm">
       <h3 class="text-center font-semibold mb-4 text-gray-800">
         Create Account
       </h3>

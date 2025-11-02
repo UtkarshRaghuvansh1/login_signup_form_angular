@@ -10,22 +10,24 @@
       <!-- 🔹 Added click bindings -->
       <button
         class="me-2 px-6 py-1 rounded-full transition-all duration-300 font-semibold"
-        [class.bg-indigo-600]="!showSignUpForm"
-        [class.text-white]="!showSignUpForm"
-        [class.bg-gray-200]="showSignUpForm"
-        [class.text-gray-700]="showSignUpForm"
-        (click)="showSignUpForm = false"
+        [ngClass]="
+          !showSignUpForm
+            ? 'bg-indigo-600 text-white'
+            : 'bg-gray-200 text-gray-700'
+        "
+        (click)="toggleForm()"
       >
         Login
       </button>
 
       <button
         class="px-6 py-1 rounded-full transition-all duration-300 font-semibold"
-        [class.bg-indigo-600]="showSignUpForm"
-        [class.text-white]="showSignUpForm"
-        [class.bg-gray-200]="!showSignUpForm"
-        [class.text-gray-700]="!showSignUpForm"
-        (click)="showSignUpForm = true"
+        [ngClass]="
+          showSignUpForm
+            ? 'bg-indigo-600 text-white'
+            : 'bg-gray-200 text-gray-700'
+        "
+        (click)="toggleForm()"
       >
         Sign Up
       </button>

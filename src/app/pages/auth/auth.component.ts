@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-auth',
-  imports: [FormsModule],
+  imports: [FormsModule, NgClass],
   templateUrl: './auth.component.html',
   styleUrl: './auth.component.css',
 })
@@ -12,6 +13,10 @@ export class AuthComponent {
   showSignUpForm = false;
 
   toggleForm() {
-    return !this.showSignUpForm;
+    console.log('button cliked');
+
+    this.showSignUpForm = !this.showSignUpForm;
+    console.log(this.showSignUpForm);
+    return this.showSignUpForm;
   }
 }
